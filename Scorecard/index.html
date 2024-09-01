@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scorecard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="setup">
+        <h1>Dhiraj Scorecard Library</h1>
+        <label for="team1">Team 1 Name:</label>
+        <input type="text" id="team1" required><br>
+
+        <label for="team2">Team 2 Name:</label>
+        <input type="text" id="team2" required><br>
+
+        <label for="toss">Who won the toss?</label>
+        <input type="text" id="toss" required><br>
+
+        <label for="decision">Decide to:</label>
+        <select id="decision">
+            <option value="bat">Bat</option>
+            <option value="ball">Ball</option>
+        </select><br>
+
+        <label for="striker">Striker Name:</label>
+        <input type="text" id="striker" required><br>
+
+        <label for="nonStriker">Non-Striker Name:</label>
+        <input type="text" id="nonStriker" required><br>
+
+        <label for="bowler">Initial Bowler Name:</label>
+        <input type="text" id="bowler" required><br>
+
+        <label for="maxOvers">Max Overs:</label>
+        <input type="number" id="maxOvers" required><br>
+
+        <label for="maxWickets">Max Wickets:</label>
+        <input type="number" id="maxWickets" required><br>
+
+        <button onclick="startMatch()">Start Match</button>
+    </div>
+
+    <div class="scorecard" style="display: none;">
+        <h1>Cricket Scorecard</h1>
+        <div id="teamNames"></div>
+        <div id="tossDecision"></div>
+        <div id="battingOrder">
+            <div id="strikerName"></div>
+            <div id="nonStrikerName"></div>
+            <div id="bowlerName"></div>
+        </div>
+        <div id="runsStats">
+            <div id="totalRuns">Total Runs: 0</div>
+            <div id="runsThisOver">Runs This Over: 0</div>
+            <div id="balls">Balls: 0</div>
+            <div id="overs">Overs: 0.0</div>
+            <div id="wickets">Wickets: 0</div>
+        </div>
+        <label for="runs">Runs Scored:</label>
+        <input type="number" id="runs" placeholder="Enter runs"><br>
+        <button id="addBallButton" onclick="addBall()">Add Ball</button>
+        <button id="deleteLastBallButton" onclick="deleteLastBall()">Delete Last Ball</button>
+        <button id="wideNoBallButton" onclick="addWideNoBall()">Wide/No Ball</button>
+        <button id="wicketButton" onclick="handleWicket()">Wicket</button>
+        <button id="changeBowlerButton" onclick="changeBowler()">Change Bowler</button>
+        <button id="startSecondInningButton" onclick="startSecondInning()" style="display: none;">Start Second Inning</button>
+        <div id="resultMessage" style="display: none;"></div>
+
+        <div id="newBatsmanSection" style="display: none;">
+            <input type="text" id="newBatsman" placeholder="New Batsman Name">
+            <select id="onStrike">
+                <option value="striker">Striker</option>
+                <option value="non-striker">Non-Striker</option>
+            </select>
+            <button onclick="addNewBatsman()">Add New Batsman</button>
+        </div>
+
+        <div id="newBowlerSection" style="display: none;">
+            <input type="text" id="newBowler" placeholder="New Bowler Name">
+            <button onclick="addNewBowler()">Add New Bowler</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #370a0a, #15060a);
+    color: #f1dede;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+}
+
+.setup, .scorecard {
+    margin: 20px auto;
+    padding: 20px;
+    background: #281616;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+}
+
+input[type="text"], input[type="number"], select {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0d022f;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background: #05e235;
+}
+
+button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+#resultMessage {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .setup, .scorecard {
+        width: 95%;
+    }
+}
